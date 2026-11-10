@@ -1,0 +1,7 @@
+{
+  "name": "stored-farewell",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

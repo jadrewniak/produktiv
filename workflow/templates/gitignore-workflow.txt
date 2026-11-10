@@ -1,0 +1,9 @@
+# Generated graph and scratch. Rebuildable.
+.workflow/graph/
+.workflow/cache/
+
+# Local durable preferences.
+.workflow/local/
+
+# Temporary handoff. Replaced, never appended.
+.workflow/handoff.md

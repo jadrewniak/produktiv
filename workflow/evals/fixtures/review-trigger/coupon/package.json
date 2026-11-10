@@ -1,0 +1,7 @@
+{
+  "name": "review-trigger-coupon",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

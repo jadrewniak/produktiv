@@ -1,0 +1,7 @@
+{
+  "name": "pair-greet",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "briefs": {
+    "broadGreenfield": "I want to build an app for a small business owner that shows available funds, expected payments and documents for the accountant. Let's start from an empty repository with an existing GitHub remote.",
+    "smallBrownfield": "Add a clear empty-result message to the existing view, without changing the data contract."
+  },
+  "stagedAnswers": {
+    "technicalDepth": "engineer",
+    "scopeIncrement": "I choose the first complete user-facing increment; show what is left for later.",
+    "scopeWholeV1": "I deliberately keep the whole V1 in one Plan. Do not reduce the scope.",
+    "foundationChoice": "I choose the recommended auth, persistence and storage set, after you present the alternative and the migration cost.",
+    "foundationDelegation": "I delegate the stack choice within the recorded constraints; do not ask about it again.",
+    "designAcceptance": "I accept the shown shell, navigation and components as the implementation baseline."
+  },
+  "cases": {
+    "E01": ["connector-read", "gh-read", "no-auth", "repo-denied", "network-error", "no-remote", "no-gh", "ambiguous-remote"],
+    "E02": ["first-increment", "whole-v1"],
+    "E03": ["owner-checkpoint", "prior-delegation", "required-plan-review"],
+    "E04": ["whole-plan-git-none-three-dependent-results"],
+    "E05": ["actionable-finding", "false-positive"],
+    "E06": ["unfinished-producer", "proved-sub-boundary", "independent-frontier"],
+    "E07": ["missing-credential", "contract-conflict"],
+    "E08": ["resume-stale-badge", "material-plan-change"],
+    "E09": ["accepted-baseline", "proposed-design-delta"],
+    "E10": ["connected-mock-flow", "browser-unavailable"],
+    "E11": ["upload-limit", "required-metadata", "partial-overdue", "revoke", "export-format", "unowned-wiring"],
+    "E12": ["in-memory-demo-rejected", "restart-read-isolation"],
+    "E13": ["increment-one", "increment-two-inherits-foundation"],
+    "E14": ["small-change-short-route", "material-unknown-support"],
+    "E15": ["comment", "yaml", "matching-both", "conflicting-both", "invalid-json", "duplicate", "issue-vs-ticket", "legacy-filename", "broken-spec-link", "source-brief"],
+    "E16": ["small", "complex-increment", "whole-v1-cold-executor"]
+  },
+  "withholdingRule": "Do not include staged answers in the initial brief. Supply each only after the workflow asks the decision-owning question or presents the required recommendation and alternative."
+}

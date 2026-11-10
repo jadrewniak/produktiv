@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How a retry feels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: #1c1917;
+      background: #fafaf9;
+      line-height: 1.4;
+    }
+
+    .experiment {
+      margin: 16px;
+      padding: 12px 16px;
+      border: 1px dashed #57534e;
+      border-radius: 6px;
+    }
+
+    .experiment-label {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #57534e;
+    }
+
+    .experiment p {
+      margin: 0 0 8px;
+    }
+
+    .experiment p:last-child {
+      margin-bottom: 0;
+    }
+
+    .job {
+      margin: 16px;
+      padding: 12px 16px;
+    }
+
+    .status {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    .note {
+      margin: 0 0 16px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    button {
+      font: inherit;
+      color: #1c1917;
+      background: #fff;
+      border: 1px solid #1c1917;
+      border-radius: 6px;
+      padding: 8px 12px;
+    }
+  </style>
+</head>
+<body>
+  <section class="experiment">
+    <p class="experiment-label">Experiment</p>
+    <p>When a failed job retries automatically, can you see it return to pending and which attempt this is, out of 3?</p>
+    <p>Hypothesis: the status and the attempt number are enough to see that return.</p>
+    <p>This page does not decide the product. It only runs the question.</p>
+  </section>
+  <section class="job">
+    <p class="status">Status: <span id="status">pending</span></p>
+    <p>Attempt <span id="attempt">1</span> of 3</p>
+    <p class="note" id="note">Ready for attempt 1 of 3.</p>
+    <div class="actions">
+      <button type="button" id="fail">Fail this attempt</button>
+      <button type="button" id="succeed">Succeed this attempt</button>
+      <button type="button" id="exhaust">Fail until the limit</button>
+      <button type="button" id="reset">Reset</button>
+    </div>
+  </section>
+  <script>
+    const LIMIT = 3;
+
+    function initial() {
+      return {
+        status: "pending",
+        attempt: 1,
+        note: "Ready for attempt 1 of 3.",
+      };
+    }
+
+    function step(state, action) {
+      if (state.status === "success") {
+        return { ...state, note: "Success does not run again." };
+      }
+      if (state.status === "failure") {
+        return { ...state, note: "Failure at the attempt limit does not run again." };
+      }
+      if (action === "succeed") {
+        return {
+          status: "success",
+          attempt: state.attempt,
+          note: "Attempt " + state.attempt + " of " + LIMIT + " succeeded. No retry.",
+        };
+      }
+      if (action === "fail") {
+        if (state.attempt >= LIMIT) {
+          return {
+            status: "failure",
+            attempt: state.attempt,
+            note: "Attempt " + LIMIT + " of " + LIMIT + " failed. The job stays failure.",
+          };
+        }
+        const next = state.attempt + 1;
+        return {
+          status: "pending",
+          attempt: next,
+          note:
+            "Attempt " +
+            state.attempt +
+            " failed. The job returned to pending for attempt " +
+            next +
+            " of " +
+            LIMIT +
+            ".",
+        };
+      }
+      return state;
+    }
+
+    function exhaust(state) {
+      let current = state;
+      while (current.status === "pending") {
+        current = step(current, "fail");
+      }
+      return current;
+    }
+
+    let state = initial();
+
+    function render() {
+      document.getElementById("status").textContent = state.status;
+      document.getElementById("attempt").textContent = String(state.attempt);
+      document.getElementById("note").textContent = state.note;
+    }
+
+    document.getElementById("fail").addEventListener("click", () => {
+      state = step(state, "fail");
+      render();
+    });
+    document.getElementById("succeed").addEventListener("click", () => {
+      state = step(state, "succeed");
+      render();
+    });
+    document.getElementById("exhaust").addEventListener("click", () => {
+      state = exhaust(state);
+      render();
+    });
+    document.getElementById("reset").addEventListener("click", () => {
+      state = initial();
+      render();
+    });
+  </script>
+</body>
+</html>

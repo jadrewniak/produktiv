@@ -1,0 +1,19 @@
+version: 1
+project:
+  mode: existing
+git:
+  workflow: none
+artifacts:
+  issues: docs/issues
+  specs: docs/specs
+  plans: docs/plans
+  adrs: docs/adr
+graph:
+  enabled: true
+verification:
+  browser: conditional
+  full_suite: closeout
+cost:
+  profile: balanced
+review:
+  external: off

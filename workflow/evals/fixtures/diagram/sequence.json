@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": { "title": "Cache Read" },
+  "participants": [
+    { "id": "user", "type": "external", "label": "User" },
+    { "id": "web", "type": "frontend", "label": "Web" },
+    { "id": "api", "type": "backend", "label": "API" },
+    { "id": "db", "type": "database", "label": "DB" }
+  ],
+  "messages": [
+    { "id": "open", "from": "user", "to": "web", "y": 180, "label": "open" },
+    { "id": "get", "from": "web", "to": "api", "y": 230, "label": "GET" },
+    { "id": "query", "from": "api", "to": "db", "y": 280, "label": "query" },
+    { "id": "rows", "from": "db", "to": "api", "y": 330, "label": "rows" },
+    { "id": "ok", "from": "api", "to": "web", "y": 380, "label": "200" }
+  ]
+}

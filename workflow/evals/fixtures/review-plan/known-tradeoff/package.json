@@ -1,0 +1,7 @@
+{
+  "name": "send-once",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

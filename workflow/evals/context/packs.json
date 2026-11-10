@@ -1,0 +1,259 @@
+[
+  {
+    "command": "implement",
+    "request": "Implement U1 only, with its required model checks and one completion assessment; no UI, new foundation, multi-result execution or graph question.",
+    "entries": [
+      {
+        "path": "skills/pk-implement/SKILL.md"
+      },
+      {
+        "path": "policies/kernel.md"
+      },
+      {
+        "path": "references/artifact-resolution.md"
+      },
+      {
+        "path": "references/review-presentation.md"
+      },
+      {
+        "path": "policies/verification.md"
+      },
+      {
+        "path": "policies/git.md"
+      },
+      {
+        "path": "agents/completion-review/v5.md"
+      },
+      {
+        "path": "references/context-pack.md"
+      },
+      {
+        "path": "evals/context/fixture/issue.md",
+        "section": "Acceptance"
+      },
+      {
+        "path": "evals/context/fixture/spec.md",
+        "section": "Rename contract"
+      },
+      {
+        "path": "evals/context/fixture/plan.md",
+        "section": "U1"
+      },
+      {
+        "path": "evals/context/fixture/quality.md"
+      },
+      {
+        "path": "evals/context/fixture/label.mjs"
+      },
+      {
+        "path": "evals/context/fixture/check.mjs"
+      }
+    ],
+    "constraints": [
+      "Empty names are refused without losing the old name.",
+      "Successful rename preserves the label ID.",
+      "No network operation is permitted.",
+      "Selected boundary is U1 only.",
+      "node check.mjs",
+      "if (!trimmed) return label;"
+    ]
+  },
+  {
+    "command": "review-plan",
+    "request": "Review the whole two-unit Plan against canonical Spec despite its stale link, accepted visual scope and actual command definition; no optional spend.",
+    "entries": [
+      {
+        "path": "skills/pk-review-plan/SKILL.md"
+      },
+      {
+        "path": "policies/kernel.md"
+      },
+      {
+        "path": "references/artifact-resolution.md"
+      },
+      {
+        "path": "references/visual-handoff.md"
+      },
+      {
+        "path": "references/review-presentation.md"
+      },
+      {
+        "path": "references/capabilities.md"
+      },
+      {
+        "path": "references/state-layout.md"
+      },
+      {
+        "path": "agents/plan-review/v8.md"
+      },
+      {
+        "path": "references/context-pack.md"
+      },
+      {
+        "path": "evals/context/fixture/issue.md"
+      },
+      {
+        "path": "evals/context/fixture/spec.md"
+      },
+      {
+        "path": "evals/context/fixture/plan.md"
+      },
+      {
+        "path": "evals/context/fixture/quality.md"
+      },
+      {
+        "path": "evals/context/fixture/label.mjs"
+      },
+      {
+        "path": "evals/context/fixture/check.mjs"
+      },
+      {
+        "path": "evals/context/fixture/design.md"
+      },
+      {
+        "path": "evals/context/fixture/accepted.html"
+      }
+    ],
+    "constraints": [
+      "No new foundation or backend was accepted or delegated.",
+      "Read the canonical spec.md despite the stale spec pointer.",
+      "Only the empty-name error state is accepted.",
+      "id=\"rename-empty\"",
+      "node check.mjs",
+      "No network operation is permitted."
+    ]
+  },
+  {
+    "command": "debug",
+    "request": "Diagnose the reported whitespace failure from symptom and current source, without explicit handoff continuation; Git delivery is none.",
+    "entries": [
+      {
+        "path": "skills/pk-debug/SKILL.md"
+      },
+      {
+        "path": "policies/kernel.md"
+      },
+      {
+        "path": "references/artifact-resolution.md"
+      },
+      {
+        "path": "references/capabilities.md"
+      },
+      {
+        "path": "references/state-layout.md"
+      },
+      {
+        "path": "policies/verification.md"
+      },
+      {
+        "path": "references/context-pack.md"
+      },
+      {
+        "path": "evals/context/fixture/symptom.md"
+      },
+      {
+        "path": "evals/context/fixture/spec.md",
+        "section": "Rename contract"
+      },
+      {
+        "path": "evals/context/fixture/issue.md",
+        "section": "Acceptance"
+      },
+      {
+        "path": "evals/context/fixture/quality.md"
+      },
+      {
+        "path": "evals/context/fixture/label.mjs"
+      },
+      {
+        "path": "evals/context/fixture/check.mjs"
+      }
+    ],
+    "constraints": [
+      "This is a reported symptom, not a verified failure.",
+      "Trim whitespace before validation.",
+      "if (!trimmed) return label;",
+      "node check.mjs"
+    ]
+  },
+  {
+    "command": "explain",
+    "request": "Explain rename behavior from current source and test definitions; no artifact question or execution request.",
+    "entries": [
+      {
+        "path": "skills/pk-explain/SKILL.md"
+      },
+      {
+        "path": "policies/kernel.md"
+      },
+      {
+        "path": "references/context-pack.md"
+      },
+      {
+        "path": "evals/context/fixture/label.mjs"
+      },
+      {
+        "path": "evals/context/fixture/check.mjs"
+      }
+    ],
+    "constraints": [
+      "const trimmed = name.trim();",
+      "if (!trimmed) return label;",
+      "return { ...label, name: trimmed };",
+      "assert.equal(before.name, 'Inbox');"
+    ]
+  },
+  {
+    "command": "handoff",
+    "request": "Explicitly resume this stale investigation handoff into authorized U1; reread current code and keep the prior review budget; no note write requested.",
+    "entries": [
+      {
+        "path": "skills/pk-handoff/SKILL.md"
+      },
+      {
+        "path": "policies/kernel.md"
+      },
+      {
+        "path": "references/artifact-resolution.md"
+      },
+      {
+        "path": "references/handoff-resume.md"
+      },
+      {
+        "path": "references/execution.md"
+      },
+      {
+        "path": "references/context-pack.md"
+      },
+      {
+        "path": "evals/context/fixture/handoff.md",
+        "section": "Transient claim"
+      },
+      {
+        "path": "evals/context/fixture/issue.md",
+        "section": "Acceptance"
+      },
+      {
+        "path": "evals/context/fixture/spec.md",
+        "section": "Rename contract"
+      },
+      {
+        "path": "evals/context/fixture/plan.md",
+        "section": "U1"
+      },
+      {
+        "path": "evals/context/fixture/label.mjs"
+      },
+      {
+        "path": "evals/context/fixture/check.mjs"
+      }
+    ],
+    "constraints": [
+      "Unverified earlier hypothesis: whitespace rename loses the label ID.",
+      "No completion assessment was performed.",
+      "No Git baseline is supplied; freshness is unknown",
+      "if (!trimmed) return label;",
+      "Selected boundary is U1 only."
+    ]
+  }
+]

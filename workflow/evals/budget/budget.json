@@ -1,0 +1,229 @@
+{
+  "unit": "words",
+  "method": "Words are whitespace-separated runs (\\S+), the same count as wc -w. A command costs its SKILL.md plus the declared files: the opening reads, the Must load line of the skill's Context section and the active reviewer rubric. Files count whole, because hosts read whole files; context-pack is the shared selection contract every command reads. Conditional reads, project artifacts, host prompts and model tokens are not counted. instructions is skills, policies and references; rubrics is every agent version an instruction names; descriptions is the frontmatter description of every skill, which hosts keep in every session.",
+  "tolerance": {
+    "command": 40,
+    "total": 100
+  },
+  "totals": {
+    "instructions": {
+      "limit": 39139
+    },
+    "rubrics": {
+      "limit": 5853
+    },
+    "templates": {
+      "limit": 2555
+    },
+    "descriptions": {
+      "limit": 351
+    }
+  },
+  "commands": {
+    "setup": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "references/state-layout.md",
+        "templates/config.yaml",
+        "templates/preferences.yaml",
+        "templates/quality.md",
+        "templates/gitignore-workflow.txt"
+      ],
+      "limit": 4167
+    },
+    "discover": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "policies/decisions.md"
+      ],
+      "limit": 2747
+    },
+    "research": {
+      "files": [
+        "policies/kernel.md",
+        "policies/cost.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "agents/researcher/v2.md"
+      ],
+      "limit": 4270
+    },
+    "prototype": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md"
+      ],
+      "limit": 2589
+    },
+    "design": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "policies/design.md"
+      ],
+      "conditional": {
+        "references/artifact-resolution.md": "The opening reads it only when resolving governing artifacts.",
+        "references/visual-handoff.md": "The opening reads it only when accepting, persisting or handing off design."
+      },
+      "limit": 3417
+    },
+    "diagram": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "templates/diagram-envelope.md"
+      ],
+      "limit": 4522
+    },
+    "to-spec": {
+      "files": [
+        "policies/kernel.md",
+        "policies/decisions.md",
+        "references/artifact-resolution.md",
+        "references/artifact-writing.md",
+        "templates/spec.md",
+        "references/context-pack.md"
+      ],
+      "limit": 5288
+    },
+    "to-plan": {
+      "files": [
+        "policies/kernel.md",
+        "references/artifact-resolution.md",
+        "references/artifact-writing.md",
+        "policies/verification.md",
+        "templates/plan.md",
+        "references/context-pack.md"
+      ],
+      "limit": 6529
+    },
+    "review-plan": {
+      "files": [
+        "references/review-presentation.md",
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "references/state-layout.md",
+        "references/artifact-resolution.md",
+        "references/visual-handoff.md",
+        "agents/plan-review/v8.md"
+      ],
+      "limit": 8096
+    },
+    "decompose": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "references/state-layout.md",
+        "templates/ticket.md",
+        "references/artifact-resolution.md",
+        "references/artifact-writing.md"
+      ],
+      "limit": 8710
+    },
+    "implement": {
+      "files": [
+        "references/review-presentation.md",
+        "policies/kernel.md",
+        "policies/verification.md",
+        "policies/git.md",
+        "references/artifact-resolution.md",
+        "references/context-pack.md",
+        "agents/completion-review/v5.md"
+      ],
+      "limit": 6847
+    },
+    "implement:fast": {
+      "files": [
+        "references/review-presentation.md",
+        "policies/kernel.md",
+        "policies/verification.md",
+        "policies/git.md",
+        "references/capabilities.md"
+      ],
+      "sections": [
+        "Fast path without a Plan"
+      ],
+      "conditional": {
+        "references/artifact-resolution.md": "The opening reads it only off the fast path.",
+        "references/context-pack.md": "The opening reads it, and the Context section applies, only off the fast path."
+      },
+      "limit": 4674
+    },
+    "code-review": {
+      "files": [
+        "references/review-presentation.md",
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "references/state-layout.md",
+        "references/artifact-resolution.md",
+        "agents/code-review/v4.md"
+      ],
+      "limit": 7852
+    },
+    "simplicity-review": {
+      "files": [
+        "references/review-presentation.md",
+        "policies/kernel.md",
+        "references/capabilities.md",
+        "references/context-pack.md",
+        "references/artifact-resolution.md",
+        "agents/simplicity-review/v4.md"
+      ],
+      "limit": 5406
+    },
+    "closeout": {
+      "files": [
+        "references/review-presentation.md",
+        "policies/kernel.md",
+        "policies/verification.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "references/state-layout.md",
+        "references/artifact-resolution.md",
+        "references/visual-handoff.md"
+      ],
+      "limit": 7443
+    },
+    "debug": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md",
+        "references/capabilities.md",
+        "references/state-layout.md",
+        "references/artifact-resolution.md",
+        "policies/verification.md"
+      ],
+      "sections": [
+        "Verify"
+      ],
+      "conditional": {
+        "policies/cost.md": "Verify reads it only when a spend past the original reproducer, such as a browser or a bisect, is in question.",
+        "references/policy-triggers.md": "Verify reads it only when a browser, a bisect, an external contract lookup or another expensive tool is in question."
+      },
+      "limit": 7382
+    },
+    "handoff": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md"
+      ],
+      "limit": 2054
+    },
+    "explain": {
+      "files": [
+        "policies/kernel.md",
+        "references/context-pack.md"
+      ],
+      "limit": 2049
+    }
+  }
+}

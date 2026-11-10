@@ -1,0 +1,7 @@
+{
+  "name": "existing-small",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

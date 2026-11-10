@@ -1,0 +1,7 @@
+{
+  "name": "ping-pair",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

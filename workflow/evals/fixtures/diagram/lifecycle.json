@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "diagram_type": "lifecycle",
+  "meta": { "title": "Review Lifecycle", "viewBox": [980, 680] },
+  "lanes": [
+    { "id": "main", "label": "Phases" }
+  ],
+  "states": [
+    { "id": "a", "type": "start", "label": "Start", "lane": "main", "col": 0 },
+    { "id": "s", "type": "active", "label": "Active", "lane": "main", "col": 1 },
+    { "id": "b", "type": "decision", "label": "Decide", "lane": "main", "col": 2 },
+    { "id": "c", "type": "success", "label": "Done", "lane": "main", "col": 3 }
+  ],
+  "transitions": [
+    { "id": "a-s", "from": "a", "to": "s", "label": "go" },
+    { "id": "s-b", "from": "s", "to": "b", "label": "go" },
+    { "id": "b-c", "from": "b", "to": "c", "label": "go" },
+    { "id": "s-a", "from": "s", "to": "a", "label": "retry", "labelDy": 51 }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "types": ["node"],
+    "typeRoots": ["vendor/understand-anything/node_modules/@types"]
+  },
+  "include": ["graph/**/*.ts", "adapters/graph/**/*.ts"]
+}

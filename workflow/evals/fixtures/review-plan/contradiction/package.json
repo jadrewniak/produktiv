@@ -1,0 +1,7 @@
+{
+  "name": "notify-once",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

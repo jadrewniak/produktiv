@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": { "title": "Event Path", "viewBox": [1100, 720] },
+  "stages": [
+    { "label": "Source" },
+    { "label": "Ingest" },
+    { "label": "Store" },
+    { "label": "Read" }
+  ],
+  "nodes": [
+    { "id": "app", "type": "frontend", "label": "App", "stage": 0, "row": 1 },
+    { "id": "edge", "type": "cloud", "label": "Edge", "stage": 1, "row": 1 },
+    { "id": "db", "type": "database", "label": "Store", "stage": 2, "row": 1 },
+    { "id": "dash", "type": "backend", "label": "Dash", "stage": 3, "row": 1 }
+  ],
+  "flows": [
+    { "id": "app-edge", "from": "app", "to": "edge", "label": "events" },
+    { "id": "edge-db", "from": "edge", "to": "db", "label": "rows" },
+    { "id": "db-dash", "from": "db", "to": "dash", "label": "query" }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "concrete-bug",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

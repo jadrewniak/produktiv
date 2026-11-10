@@ -1,0 +1,49 @@
+{
+  "name": "@produktiv/understand-anything",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Vendored Understand Anything structural subset. Grammar WASM resolves from this package root.",
+  "files": [
+    "dist",
+    "wasm",
+    "scripts/extract-structure-result.mjs",
+    "scripts/extract-structure.mjs",
+    "scripts/extract-import-map.mjs",
+    "scripts/scan-project.mjs",
+    "scripts/prepare-incremental.mjs",
+    "scripts/finalize-incremental.mjs",
+    "scripts/validate-incremental-symbols.mjs",
+    "scripts/head-source.mjs",
+    "LICENSE",
+    "THIRD-PARTY",
+    "BUNDLE.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@tree-sitter-grammars/tree-sitter-kotlin": "1.1.0",
+    "@understand-anything/tree-sitter-dart-wasm": "file:./wasm/tree-sitter-dart-wasm",
+    "@understand-anything/tree-sitter-swift-wasm": "file:./wasm/tree-sitter-swift-wasm",
+    "ignore": "^7.0.5",
+    "tree-sitter-c-sharp": "^0.23.1",
+    "tree-sitter-cpp": "^0.23.4",
+    "tree-sitter-go": "^0.25.0",
+    "tree-sitter-java": "^0.23.5",
+    "tree-sitter-javascript": "^0.25.0",
+    "tree-sitter-php": "^0.23.11",
+    "tree-sitter-python": "^0.25.0",
+    "tree-sitter-ruby": "^0.23.1",
+    "tree-sitter-rust": "^0.24.0",
+    "tree-sitter-scala": "^0.24.0",
+    "tree-sitter-typescript": "^0.23.2",
+    "web-tree-sitter": "^0.26.6",
+    "yaml": "^2.8.3",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "typescript": "^5.7.0"
+  }
+}

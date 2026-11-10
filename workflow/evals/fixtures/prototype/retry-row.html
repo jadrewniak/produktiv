@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retry a failed job</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      color: #1c1917;
+      background: #fafaf9;
+      line-height: 1.4;
+    }
+
+    .experiment {
+      margin: 16px;
+      padding: 12px 16px;
+      border: 1px dashed #57534e;
+      border-radius: 6px;
+    }
+
+    .experiment-label {
+      margin: 0 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #57534e;
+    }
+
+    .experiment p {
+      margin: 0 0 8px;
+    }
+
+    .experiment p:last-child {
+      margin-bottom: 0;
+    }
+
+    .jobs {
+      list-style: none;
+      margin: 0;
+      padding: 0 16px 16px;
+    }
+
+    .job {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-bottom: 1px solid #e7e5e4;
+    }
+
+    .name {
+      flex: 1 1 8rem;
+    }
+
+    .status {
+      color: #57534e;
+    }
+
+    .status-failed {
+      color: #9f1239;
+    }
+
+    button {
+      font: inherit;
+      color: #fafaf9;
+      background: #1d4ed8;
+      border: 0;
+      border-radius: 6px;
+      padding: 8px 16px;
+    }
+
+    button:focus-visible {
+      outline: 2px solid #1c1917;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <header class="experiment">
+    <p class="experiment-label">Experiment</p>
+    <p id="question">After a job fails, does Retry on that row make the return to pending visible?</p>
+    <p>Hypothesis: Retry on the failed row is enough to see that job return to pending.</p>
+    <p>Decision change: if the row does not show pending after Retry, reject this recovery. If it does, the experiment supports in-row retry. The product decision waits for acceptance.</p>
+  </header>
+  <ul class="jobs" id="jobs"></ul>
+  <script>
+    const jobs = [
+      { id: "invoice", name: "Invoice import", status: "pending" },
+      { id: "photo", name: "Photo resize", status: "failed" }
+    ];
+
+    function retry(id) {
+      const job = jobs.find((item) => item.id === id);
+      if (!job || job.status !== "failed") return;
+      job.status = "pending";
+      render();
+    }
+
+    function render() {
+      const list = document.getElementById("jobs");
+      list.innerHTML = jobs.map((job) => {
+        const failed = job.status === "failed";
+        const action = failed
+          ? `<button type="button" data-action="retry" data-id="${job.id}">Retry</button>`
+          : "";
+        const statusClass = failed ? "status status-failed" : "status";
+        return `<li class="job">
+          <span class="name">${job.name}</span>
+          <span class="${statusClass}" id="${job.id}-status">${job.status}</span>
+          ${action}
+        </li>`;
+      }).join("");
+    }
+
+    document.getElementById("jobs").addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-action='retry']");
+      if (!button) return;
+      retry(button.dataset.id);
+    });
+
+    render();
+  </script>
+</body>
+</html>

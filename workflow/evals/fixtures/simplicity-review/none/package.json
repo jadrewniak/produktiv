@@ -1,0 +1,7 @@
+{
+  "name": "simplicity-review-none",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

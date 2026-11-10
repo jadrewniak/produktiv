@@ -1,0 +1,45 @@
+name: evals
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  evals:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Allow the network namespace behind the offline diagram proof
+        if: runner.os == 'Linux'
+        run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      - name: Configure Git identity for fixture repositories
+        run: |
+          git config --global user.name "produktiv-ci"
+          git config --global user.email "ci@users.noreply.github.com"
+          git config --global init.defaultBranch main
+      - name: Install the vendored graph runtime dependencies
+        run: npx --yes pnpm@12.16.1 --dir workflow/vendor/understand-anything install --frozen-lockfile --ignore-scripts
+      - run: node workflow/evals/run.mjs --all
+
+  npm-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install the vendored graph runtime dependencies
+        run: npx --yes pnpm@12.16.1 --dir workflow/vendor/understand-anything install --frozen-lockfile --ignore-scripts
+      - run: sh scripts/smoke-npm-install.sh

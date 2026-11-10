@@ -1,0 +1,48 @@
+# Reproducible upstream sources for workflow skills and engine runtimes
+
+# PROMPT / WORKFLOW SOURCES
+matt-skills:
+  repo: https://github.com/mattpocock/skills
+  commit: c55ee46073ed923f86ce59a5eb3b6d895095d1b7
+  license: MIT
+
+addy-agent-skills:
+  repo: https://github.com/addyosmani/agent-skills
+  commit: dc27a9c2e13721158157632de61b4106c6c2a2a1
+  license: MIT
+
+superpowers:
+  repo: https://github.com/obra/superpowers
+  commit: 5bf4e78011075bcfc0dc295f0724994cd123ee71
+  license: MIT
+
+ponytail:
+  repo: https://github.com/DietrichGebert/ponytail
+  commit: e3ba2aa6f1e6f0bc4d69eb09c9f0d0a93af56156
+  license: MIT
+
+caveman:
+  repo: https://github.com/JuliusBrussee/caveman
+  commit: ae26f3a4775574bd49dc8bdb61c0287bbc3cd268
+  license: MIT (skills/prompts) / BSL-1.1 (engine/proxy core)
+
+ui-ux-pro-max:
+  repo: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
+  commit: 0d2b646cb6f48d8478f41417b2e8a5a30fd59175
+  license: MIT
+
+taste:
+  repo: https://github.com/Leonxlnx/taste-skill
+  commit: 5217fb45be2c0b302f29c9cd31cbd3237501c684
+  license: MIT
+
+# ENGINE SOURCES
+understand-anything:
+  repo: https://github.com/Egonex-AI/Understand-Anything
+  commit: 6df3065f1d8ddc2ce3615314d1d493f36d6b1c80
+  license: MIT
+
+archify:
+  repo: https://github.com/tt-a1i/archify
+  commit: 5289f6867f048a7450ec5718f58459613a84cf41
+  license: MIT

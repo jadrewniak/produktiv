@@ -1,0 +1,7 @@
+{
+  "name": "produktiv-workflow",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Produktiv workflow package — canonical Agent Skills tree for the v1 lifecycle commands, shared policies, and optional graph/diagram runtimes."
+}

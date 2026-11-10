@@ -1,0 +1,12 @@
+version: 1
+project:
+  mode: existing
+git:
+  workflow: none
+artifacts:
+  issues: github
+  specs: docs/specs
+  plans: docs/plans
+  adrs: docs/adr
+graph:
+  enabled: false

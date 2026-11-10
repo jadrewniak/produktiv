@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Twelve Services"
+  },
+  "layout": {
+    "mode": "grid",
+    "cols": 4
+  },
+  "components": [
+    {
+      "id": "c00",
+      "type": "frontend",
+      "label": "S00",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "c01",
+      "type": "backend",
+      "label": "S01",
+      "row": 0,
+      "col": 1
+    },
+    {
+      "id": "c02",
+      "type": "database",
+      "label": "S02",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "c03",
+      "type": "cloud",
+      "label": "S03",
+      "row": 0,
+      "col": 3
+    },
+    {
+      "id": "c10",
+      "type": "frontend",
+      "label": "S10",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "c11",
+      "type": "backend",
+      "label": "S11",
+      "row": 1,
+      "col": 1
+    },
+    {
+      "id": "c12",
+      "type": "database",
+      "label": "S12",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "id": "c13",
+      "type": "cloud",
+      "label": "S13",
+      "row": 1,
+      "col": 3
+    },
+    {
+      "id": "c20",
+      "type": "frontend",
+      "label": "S20",
+      "row": 2,
+      "col": 0
+    },
+    {
+      "id": "c21",
+      "type": "backend",
+      "label": "S21",
+      "row": 2,
+      "col": 1
+    },
+    {
+      "id": "c22",
+      "type": "database",
+      "label": "S22",
+      "row": 2,
+      "col": 2
+    },
+    {
+      "id": "c23",
+      "type": "cloud",
+      "label": "S23",
+      "row": 2,
+      "col": 3
+    }
+  ],
+  "connections": [
+    {
+      "id": "c00-c01",
+      "from": "c00",
+      "to": "c01",
+      "label": "go"
+    },
+    {
+      "id": "c01-c02",
+      "from": "c01",
+      "to": "c02",
+      "label": "go"
+    },
+    {
+      "id": "c02-c03",
+      "from": "c02",
+      "to": "c03",
+      "label": "go"
+    },
+    {
+      "id": "c10-c11",
+      "from": "c10",
+      "to": "c11",
+      "label": "go"
+    },
+    {
+      "id": "c11-c12",
+      "from": "c11",
+      "to": "c12",
+      "label": "go"
+    },
+    {
+      "id": "c12-c13",
+      "from": "c12",
+      "to": "c13",
+      "label": "go"
+    },
+    {
+      "id": "c20-c21",
+      "from": "c20",
+      "to": "c21",
+      "label": "go"
+    },
+    {
+      "id": "c21-c22",
+      "from": "c21",
+      "to": "c22",
+      "label": "go"
+    },
+    {
+      "id": "c22-c23",
+      "from": "c22",
+      "to": "c23",
+      "label": "go"
+    }
+  ]
+}

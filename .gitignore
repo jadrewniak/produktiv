@@ -1,0 +1,18 @@
+# Finder view metadata. Recreated locally on macOS.
+.DS_Store
+
+# Upstream repositories and snapshots
+.upstream/
+
+# Installed dependencies. The prebuilt graph bundle commits dist/, not node_modules/.
+node_modules/
+
+# Transpiled by graph evals from the TypeScript sources beside them.
+workflow/graph/assemble.js
+workflow/graph/store.js
+workflow/graph/reconcile.js
+workflow/graph/neighborhood.js
+workflow/graph/queries.js
+workflow/graph/impact.js
+workflow/adapters/graph/index.js
+.pnpm-store/

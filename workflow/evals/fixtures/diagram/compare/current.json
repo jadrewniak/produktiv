@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "App Pair"
+  },
+  "layout": {
+    "mode": "grid",
+    "cols": 4
+  },
+  "components": [
+    {
+      "id": "web",
+      "type": "frontend",
+      "label": "A<B",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "API",
+      "row": 0,
+      "col": 2
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "B&C",
+      "row": 1,
+      "col": 2
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "App",
+      "wraps": [
+        "web",
+        "api",
+        "db"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "web-api",
+      "from": "web",
+      "to": "api",
+      "label": "call"
+    },
+    {
+      "id": "api-db",
+      "from": "api",
+      "to": "db",
+      "label": "SQL",
+      "labelDy": 24
+    }
+  ]
+}

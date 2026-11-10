@@ -1,0 +1,10 @@
+{
+  "name": "dependency-version",
+  "type": "module",
+  "dependencies": {
+    "pad-name": "1.4.0"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}

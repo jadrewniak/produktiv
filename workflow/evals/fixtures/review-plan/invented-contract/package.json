@@ -1,0 +1,7 @@
+{
+  "name": "same-body",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

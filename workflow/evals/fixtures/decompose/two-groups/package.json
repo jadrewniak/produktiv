@@ -1,0 +1,7 @@
+{
+  "name": "mark-pair",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

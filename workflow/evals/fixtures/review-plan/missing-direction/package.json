@@ -1,0 +1,7 @@
+{
+  "name": "clear-mark",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}

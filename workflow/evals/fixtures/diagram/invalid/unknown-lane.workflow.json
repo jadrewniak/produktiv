@@ -1,0 +1,50 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Review Steps"
+  },
+  "lanes": [
+    {
+      "id": "main",
+      "label": "Author"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "draft",
+      "lane": "main",
+      "col": 0,
+      "type": "frontend",
+      "label": "Draft"
+    },
+    {
+      "id": "check",
+      "lane": "ghost",
+      "col": 1,
+      "type": "backend",
+      "label": "Check"
+    },
+    {
+      "id": "ship",
+      "lane": "main",
+      "col": 2,
+      "type": "cloud",
+      "label": "Ship"
+    }
+  ],
+  "edges": [
+    {
+      "id": "draft-check",
+      "from": "draft",
+      "to": "check",
+      "label": "ready"
+    },
+    {
+      "id": "check-ship",
+      "from": "check",
+      "to": "ship",
+      "label": "pass"
+    }
+  ]
+}

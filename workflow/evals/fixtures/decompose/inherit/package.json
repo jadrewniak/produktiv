@@ -1,0 +1,7 @@
+{
+  "name": "copy-snapshot",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
